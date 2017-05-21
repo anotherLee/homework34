@@ -15,8 +15,12 @@ Released under the MIT license: http://jsbin.mit-license.org
   <title>JS Bin</title>
   <script>
     var screenWidth = window.innerWidth
-    console.log(screenWidth)
-    
+    var css = `
+      html{
+        font-size:${screenWidth}px;
+      }
+    `
+    document.write(`<style>${css}</style>`)
   </script>
   <style>
     *{
@@ -25,9 +29,9 @@ Released under the MIT license: http://jsbin.mit-license.org
       box-sizing:border-box;
       list-style:none;
     }
-    html{
-      font-size:320px; /* 1rem=320px */
-    }
+    /*html{*/
+      /*font-size:320px; !* 1rem=320px *!*/
+    /*}*/
     body{
       font-size:0.05rem;
     }
@@ -99,7 +103,7 @@ Released under the MIT license: http://jsbin.mit-license.org
     <li class=child></li>
   </ul>
   <script>
-    document.getElementsByTagName('html')[0].style.fontSize = screenWidth + 'px'
+
   </script>
 </body>
 </html>

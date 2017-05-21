@@ -11,13 +11,17 @@ Released under the MIT license: http://jsbin.mit-license.org
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script>
+    var scale = 1 / devicePixelRatio
+    document.write(`<meta name="viewport" content="user-scalable=no, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}">`)
+  </script>
+
   <title>JS Bin</title>
   <script>
-    var screenWidth = window.innerWidth
+    var screenWidth = window.screen.width
     var css = `
       html{
-        font-size:${screenWidth}px;
+        font-size:${screenWidth * devicePixelRatio }px;
       }
     `
     document.write(`<style>${css}</style>`)
@@ -47,6 +51,7 @@ Released under the MIT license: http://jsbin.mit-license.org
       justify-content:space-around;
       flex-wrap:wrap;
       margin-top:0.09375rem;
+      border:1px solid red;
     }
     ul li{
       width:0.3125rem;
